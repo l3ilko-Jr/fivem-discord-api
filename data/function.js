@@ -4,7 +4,7 @@ getAllServers = () => {
   return new Promise(function(Success, Error) {
     request('http://servers-live.fivem.net/api/servers/', function (error, response, body) {
       if (error) return Error(error);
-      Success(JSON.parse(body));
+      all = JSON.parse(body);
     });
   });
 }
@@ -29,3 +29,4 @@ getServerPlayers = (ip) => {
 
 module.exports.getServerPlayers = getServerPlayers;
 module.exports.getServerInfo = getServerInfo;
+module.exports.getAllServers = getAllServers
